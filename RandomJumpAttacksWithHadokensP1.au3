@@ -10,15 +10,15 @@ Do
 	Local $r = Random (1, 4, 1)
 	Switch $r
 		Case 1
-			HadokenP2($LP)
+			QcfMotion($LP, $RIGHT)
 		Case 2
-			HadokenP2($MP)
+			QcfMotion($MP, $RIGHT)
 		Case 3
-			HadokenP2($HP)
+			QcfMotion($HP, $RIGHT)
 		Case 4
-			JumpAttackP2($HK)
+			JumpAttack($HK, $RIGHT)
 			Sleep(40)
-			WalkBackwardP2(60)
+			Walk(60, $LEFT)
 		Case Else
 	EndSwitch
 

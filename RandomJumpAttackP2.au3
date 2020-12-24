@@ -6,10 +6,10 @@ Do
 	Local $interval = Random (1000, 5000, 1)
 	Sleep($interval)
 	#DO JUMP ATTACK
-	JumpAttackP2($HK)
+	JumpAttack($HK, $LEFT)
 
 	Sleep(40)
-	WalkBackwardP2(60)
+	Walk(60, $RIGHT)
 
 Until $counter = 0
 

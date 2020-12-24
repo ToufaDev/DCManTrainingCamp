@@ -19,51 +19,43 @@ Func inputRelease($key)
 	Send("{" & $key & " up}");
 EndFunc
 
-
-Func HadokenP2($inputFinal)
-
+Func QcfMotion($DIRECTION, $inputFinal)
 	inputHold($DOWN)
 	waitFrames(2)
-	inputHold($LEFT)
+	inputHold($DIRECTION)
 	waitFrames(2)
 	inputRelease($DOWN)
 	waitFrames(2)
 	InputHold($inputFinal)
 	waitFrames(2)
-	inputRelease($LEFT)
+	inputRelease($DIRECTION)
 	inputRelease($inputFinal)
-
 EndFunc
 
-Func ForwardJumpP2()
-
-	InputHold($LEFT)
+Func DiagonalJump($DIRECTION)
+	If $DIRECTION <> $RIGHT And $DIRECTION <> $LEFT Then
+		MsgBox(0, "error", "wrong direction on DiagonalJump function")
+		Exit
+	EndIf
+	InputHold($DIRECTION)
 	InputHold($UP)
 	waitFrames(1)
-	inputRelease($LEFT)
+	inputRelease($DIRECTION)
 	inputRelease($UP)
 
 EndFunc
 
-Func WalkForwardP2($NbFrames)
+Func Walk($NbFrames, $DIRECTION)
 
-	InputHold($LEFT)
+	InputHold($DIRECTION)
 	waitFrames($NbFrames)
-	inputRelease($LEFT)
+	inputRelease($DIRECTION)
 
 EndFunc
 
-Func WalkBackwardP2($NbFrames)
+Func JumpAttack($inputFinal, $DIRECTION)
 
-	InputHold($RIGHT)
-	waitFrames($NbFrames)
-	inputRelease($RIGHT)
-
-EndFunc
-
-Func JumpAttackP2($inputFinal)
-
-	ForwardJumpP2()
+	DiagonalJump($DIRECTION)
 	waitFrames(24)
 	oneFrameInput($inputFinal)
 

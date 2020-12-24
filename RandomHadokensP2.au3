@@ -17,7 +17,7 @@ Do
 		Case Else
 	EndSwitch
 
-	HadokenP2($HadoForce)
+	QcfMotion($LEFT, $HadoForce)
 	Local $interval = Random (1000, 5000, 1)
 	Sleep($interval)
 Until $counter = 0
