@@ -10,11 +10,11 @@ Do
 	Local $r = Random (1, 4, 1)
 	Switch $r
 		Case 1
-			QcfMotion($LP, $RIGHT)
+			QcfMotion($RIGHT, $LP)
 		Case 2
-			QcfMotion($MP, $RIGHT)
+			QcfMotion($RIGHT, $MP)
 		Case 3
-			QcfMotion($HP, $RIGHT)
+			QcfMotion($RIGHT, $HP)
 		Case 4
 			JumpAttack($HK, $RIGHT)
 			Sleep(40)
